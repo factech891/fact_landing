@@ -2,45 +2,45 @@
 import React from 'react';
 import { Box, Typography, Container, Grid } from '@mui/material';
 
-// Importar todas las imágenes
-import imgRetail from '../../assets/images/retail.png';
-import imgFacturacion from '../../assets/images/facturacion.png';
-import imgInventario from '../../assets/images/inventario.png';
-import imgCobranza from '../../assets/images/cobranza.png';
-import imgReportes from '../../assets/images/reportes.png';
-import imgLogistica from '../../assets/images/logistica.png';
+// URLs de Cloudflare para cada imagen
+const imgFacturacionUrl = "https://pub-c37b7a23aa9c49239d088e3e0a3ba275.r2.dev/Facturacio%CC%81n%20Electro%CC%81nica.png";
+const imgInventarioUrl = "https://pub-c37b7a23aa9c49239d088e3e0a3ba275.r2.dev/Control%20de%20Inventario.png";
+const imgCobranzaUrl = "https://pub-c37b7a23aa9c49239d088e3e0a3ba275.r2.dev/cuentas.png";
+const imgReportesUrl = "https://pub-c37b7a23aa9c49239d088e3e0a3ba275.r2.dev/reportes.png";
+const imgRetailUrl = "https://pub-c37b7a23aa9c49239d088e3e0a3ba275.r2.dev/retai.png";
+const imgLogisticaUrl = "https://pub-c37b7a23aa9c49239d088e3e0a3ba275.r2.dev/logistica.png";
 
 const CoreModules = () => {
   const features = [
     { 
       title: 'Facturación Electrónica', 
       description: 'Crea facturas electrónicas con validez fiscal. Cumple con los requisitos legales.', 
-      image: imgFacturacion
+      image: imgFacturacionUrl
     },
     { 
       title: 'Control de Inventario', 
       description: 'Mantén actualizado tu inventario en tiempo real. Controla stock y almacenes.', 
-      image: imgInventario
+      image: imgInventarioUrl
     },
     { 
       title: 'Cuentas por Cobrar', 
       description: 'Realiza seguimiento de pagos pendientes y automatiza recordatorios de cobro.', 
-      image: imgCobranza
+      image: imgCobranzaUrl
     },
     { 
       title: 'Reportes Inteligentes', 
       description: 'Obtén insights detallados sobre tu negocio. Visualiza métricas clave.', 
-      image: imgReportes
+      image: imgReportesUrl
     },
     { 
       title: 'Comercio Minorista', 
       description: 'Solución especializada para comercios. Gestiona punto de venta e inventario.', 
-      image: imgRetail 
+      image: imgRetailUrl 
     },
     { 
       title: 'Logística y Transporte', 
       description: 'Administra operaciones de transporte, gestiona flotas y rutas.', 
-      image: imgLogistica
+      image: imgLogisticaUrl
     }
   ];
 

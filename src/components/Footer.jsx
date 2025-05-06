@@ -1,8 +1,8 @@
 // src/components/Footer.jsx
 import React from 'react';
-import { Box, Container, Grid, Typography, Divider, useMediaQuery } from '@mui/material';
+import { Box, Container, Grid, Typography, Divider, useMediaQuery, Tooltip, Chip } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { Email, Phone, LinkedIn, Twitter, Facebook, Instagram } from '@mui/icons-material';
+import { Email, Twitter, Instagram } from '@mui/icons-material';
 
 // Sección principal del footer con blanco puro
 const FooterWrapper = styled(Box)({
@@ -57,19 +57,34 @@ const Footer = () => {
             >
               Sistema flexible de facturación diseñado para adaptarse a negocios de todos los tamaños y sectores, optimizando operaciones y cumpliendo normativas fiscales.
             </Typography>
+            
+            {/* Redes sociales actualizadas: Twitter, Instagram, TikTok */}
             <Box sx={{ display: 'flex', mt: 3, gap: 2 }}>
-              <Box component="a" href="#" sx={{ color: '#6b7280', '&:hover': { color: '#4338ca' } }}>
-                <LinkedIn fontSize="small" />
-              </Box>
-              <Box component="a" href="#" sx={{ color: '#6b7280', '&:hover': { color: '#4338ca' } }}>
-                <Twitter fontSize="small" />
-              </Box>
-              <Box component="a" href="#" sx={{ color: '#6b7280', '&:hover': { color: '#4338ca' } }}>
-                <Facebook fontSize="small" />
-              </Box>
-              <Box component="a" href="#" sx={{ color: '#6b7280', '&:hover': { color: '#4338ca' } }}>
-                <Instagram fontSize="small" />
-              </Box>
+              <Tooltip title="Próximamente" arrow>
+                <Box sx={{ color: '#6b7280', cursor: 'not-allowed', opacity: 0.8 }}>
+                  <Twitter fontSize="small" />
+                </Box>
+              </Tooltip>
+              <Tooltip title="Próximamente" arrow>
+                <Box sx={{ color: '#6b7280', cursor: 'not-allowed', opacity: 0.8 }}>
+                  <Instagram fontSize="small" />
+                </Box>
+              </Tooltip>
+              <Tooltip title="Próximamente" arrow>
+                <Box sx={{ color: '#6b7280', cursor: 'not-allowed', opacity: 0.8 }}>
+                  {/* Icono personalizado para TikTok */}
+                  <Box 
+                    component="svg" 
+                    sx={{ width: 20, height: 20 }}
+                    viewBox="0 0 24 24"
+                  >
+                    <path 
+                      fill="currentColor" 
+                      d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"
+                    />
+                  </Box>
+                </Box>
+              </Tooltip>
             </Box>
           </Grid>
 
@@ -138,26 +153,34 @@ const Footer = () => {
             </Box>
           </Grid>
 
-          {/* Columna 3: Legal */}
+          {/* Columna 3: Legal - Marcada como "En desarrollo" */}
           <Grid item xs={12} sm={6} md={2.5}>
-            <Typography 
-              variant="subtitle1" 
-              fontWeight={600} 
-              sx={{ mb: 2 }}
-            >
-              Legal
-            </Typography>
-            <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-              <Typography component="a" href="#" sx={{ mb: 1, textDecoration: 'none', color: '#6b7280', '&:hover': { color: '#4338ca' } }}>
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 2 }}>
+              <Typography variant="subtitle1" fontWeight={600}>
+                Legal
+              </Typography>
+              <Chip 
+                size="small" 
+                label="En desarrollo" 
+                sx={{ 
+                  fontSize: '0.7rem',
+                  backgroundColor: 'rgba(79, 70, 229, 0.1)',
+                  color: '#4338ca',
+                  fontWeight: 500
+                }} 
+              />
+            </Box>
+            <Box sx={{ display: 'flex', flexDirection: 'column', opacity: 0.7 }}>
+              <Typography component="span" sx={{ mb: 1, textDecoration: 'none', color: '#6b7280', cursor: 'not-allowed' }}>
                 Términos de Uso
               </Typography>
-              <Typography component="a" href="#" sx={{ mb: 1, textDecoration: 'none', color: '#6b7280', '&:hover': { color: '#4338ca' } }}>
+              <Typography component="span" sx={{ mb: 1, textDecoration: 'none', color: '#6b7280', cursor: 'not-allowed' }}>
                 Privacidad
               </Typography>
-              <Typography component="a" href="#" sx={{ mb: 1, textDecoration: 'none', color: '#6b7280', '&:hover': { color: '#4338ca' } }}>
+              <Typography component="span" sx={{ mb: 1, textDecoration: 'none', color: '#6b7280', cursor: 'not-allowed' }}>
                 Cookies
               </Typography>
-              <Typography component="a" href="#" sx={{ mb: 1, textDecoration: 'none', color: '#6b7280', '&:hover': { color: '#4338ca' } }}>
+              <Typography component="span" sx={{ mb: 1, textDecoration: 'none', color: '#6b7280', cursor: 'not-allowed' }}>
                 Licencias
               </Typography>
             </Box>
@@ -178,16 +201,7 @@ const Footer = () => {
                 sx={{ mr: 1, color: '#4338ca' }} 
               />
               <Typography variant="body2" sx={{ color: '#6b7280' }}>
-                info@facttech.com
-              </Typography>
-            </Box>
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <Phone 
-                fontSize="small" 
-                sx={{ mr: 1, color: '#4338ca' }} 
-              />
-              <Typography variant="body2" sx={{ color: '#6b7280' }}>
-                +1 (555) 123-4567
+                info@facttech.io
               </Typography>
             </Box>
           </Grid>
@@ -195,7 +209,7 @@ const Footer = () => {
 
         <Divider sx={{ my: 4, backgroundColor: 'rgba(0, 0, 0, 0.1)' }} />
 
-        {/* Sección de copyright */}
+        {/* Sección de copyright con emoji de robot */}
         <Box 
           sx={{ 
             display: 'flex', 
@@ -212,7 +226,7 @@ const Footer = () => {
             &copy; {new Date().getFullYear()} FactTech. Todos los derechos reservados.
           </Typography>
           <Typography variant="body2" sx={{ color: '#6b7280' }}>
-            Diseñado con <span style={{ color: '#ef4444' }}>❤️</span> para tu negocio
+            Diseñado por bitsdeve 🤖
           </Typography>
         </Box>
       </Container>

@@ -174,7 +174,7 @@ const GlobalReachSection = () => {
   return (
     <SectionWrapper id="global-reach-section">
       <BackgroundVideo autoPlay loop muted playsInline>
-        <source src="https://pub-c37b7a23aa9c49239d088e3e0a3ba275.r2.dev/Video_de_Facturaci_n_Global_Listo.mp4" type="video/mp4" />
+        <source src="https://pub-c37b7a23aa9c49239d088e3e0a3ba275.r2.dev/newscolores.mp4" type="video/mp4" />
         Tu navegador no soporta la etiqueta de video.
       </BackgroundVideo>
 

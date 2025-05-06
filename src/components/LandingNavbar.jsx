@@ -25,7 +25,7 @@ import { styled } from '@mui/material/styles';
 import { Menu as MenuIcon, Close as CloseIcon, KeyboardArrowDown } from '@mui/icons-material';
 import { Link as RouterLink } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import DemoDialog from './DemoDialog'; 
+import DemoDialog from './DemoDialog';
 
 // Componente para ocultar navbar al scroll
 function HideOnScroll({ children }) {
@@ -37,7 +37,7 @@ function HideOnScroll({ children }) {
 const StyledAppBar = styled(AppBar)(({ theme, scrolled }) => ({
   boxShadow: scrolled ? '0 4px 20px rgba(0, 0, 0, 0.08)' : 'none',
   // Fondo blanco cuando hace scroll, transparente al inicio
-  background: scrolled 
+  background: scrolled
     ? '#ffffff'
     : 'linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0) 100%)',
   backdropFilter: scrolled ? 'blur(8px)' : 'none',
@@ -194,10 +194,10 @@ const Navbar = ({ activeSection = "home" }) => {
   const [scrolled, setScrolled] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [buttonHovered, setButtonHovered] = useState(false);
-  
+
   // Estado para controlar la apertura/cierre del diálogo de demo
   const [demoDialogOpen, setDemoDialogOpen] = useState(false);
-  
+
   // Funciones para abrir/cerrar el diálogo
   const openDemoDialog = () => setDemoDialogOpen(true);
   const closeDemoDialog = () => setDemoDialogOpen(false);
@@ -226,10 +226,6 @@ const Navbar = ({ activeSection = "home" }) => {
     { id: 'contact', label: 'Contacto', href: '#contact' },
   ];
 
-  // Rutas de imágenes
-  const logoSrc = '/assets/images/logo-facttech.png';
-  const logoHeight = '38px';
-
   return (
     <HideOnScroll>
       <StyledAppBar position="fixed" elevation={0} scrolled={scrolled}>
@@ -240,39 +236,30 @@ const Navbar = ({ activeSection = "home" }) => {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              style={{ display: 'flex', alignItems: 'center', gap: '12px' }}
+              style={{ display: 'flex', alignItems: 'center' }}
             >
-              <Box 
-                component="img" 
-                src={logoSrc} 
-                alt="FactTech" 
-                sx={{
-                  height: logoHeight,
-                  width: 'auto',
-                }}
-              />
               {/* Aplicamos el mismo estilo de gradiente del footer */}
               {scrolled ? (
-                <LogoText 
-                  variant="h5" 
-                  component="div" 
-                  sx={{ 
-                    fontSize: { xs: '18px', sm: '20px', md: '22px' },
-                    display: { xs: 'none', sm: 'block' },
+                <LogoText
+                  variant="h5"
+                  component="div"
+                  sx={{
+                    fontSize: { xs: '20px', sm: '22px', md: '24px' },
+                    display: 'block'
                   }}
                 >
                   FactTech
                 </LogoText>
               ) : (
-                <Typography 
-                  variant="h5" 
-                  component="div" 
-                  sx={{ 
-                    fontWeight: 700, 
+                <Typography
+                  variant="h5"
+                  component="div"
+                  sx={{
+                    fontWeight: 700,
                     color: '#ffffff',
                     textShadow: '0 2px 8px rgba(0, 0, 0, 0.6)',
-                    fontSize: { xs: '18px', sm: '20px', md: '22px' },
-                    display: { xs: 'none', sm: 'block' },
+                    fontSize: { xs: '20px', sm: '22px', md: '24px' },
+                    display: 'block',
                     transition: 'all 0.3s ease',
                     letterSpacing: '0.5px',
                   }}
@@ -363,7 +350,7 @@ const Navbar = ({ activeSection = "home" }) => {
             </DemoButtonWrapper>
 
             {/* Botón menú móvil */}
-            <MobileMenuButton 
+            <MobileMenuButton
               onClick={toggleDrawer(true)}
               aria-label="Menú"
               scrolled={scrolled}
@@ -391,15 +378,14 @@ const Navbar = ({ activeSection = "home" }) => {
             <DrawerContent>
               <DrawerHeader>
                 <BrandContainer onClick={toggleDrawer(false)}>
-                  <Box component="img" src={logoSrc} alt="FactTech" sx={{ height: '38px' }} />
                   <LogoText variant="h6" sx={{ fontWeight: 700, fontSize: '22px' }}>
                     FactTech
                   </LogoText>
                 </BrandContainer>
-                <IconButton 
-                  onClick={toggleDrawer(false)} 
+                <IconButton
+                  onClick={toggleDrawer(false)}
                   aria-label="Cerrar menú"
-                  sx={{ 
+                  sx={{
                     color: '#536083',
                     background: 'rgba(0, 0, 0, 0.03)',
                     '&:hover': { background: 'rgba(0, 0, 0, 0.05)' },
@@ -408,12 +394,12 @@ const Navbar = ({ activeSection = "home" }) => {
                   <CloseIcon />
                 </IconButton>
               </DrawerHeader>
-              
+
               <Box sx={{ p: 2, mt: 1 }}>
                 <Typography variant="body2" color="text.secondary" sx={{ mb: 2, opacity: 0.7, px: 2, fontWeight: 500 }}>
                   NAVEGACIÓN
                 </Typography>
-                
+
                 <List sx={{ p: 0 }}>
                   {navItems.map((item) => (
                     <StyledListItem key={item.id} disablePadding active={activeSection === item.id ? 1 : 0}>
@@ -427,7 +413,7 @@ const Navbar = ({ activeSection = "home" }) => {
                           }
                         }}
                       >
-                        <ListItemText 
+                        <ListItemText
                           primary={item.label}
                           primaryTypographyProps={{
                             fontSize: '16px',
@@ -439,12 +425,12 @@ const Navbar = ({ activeSection = "home" }) => {
                   ))}
                 </List>
               </Box>
-              
+
               <DrawerFooter>
                 <Typography variant="body2" color="text.secondary" sx={{ mb: 2, opacity: 0.7, fontWeight: 500 }}>
                   ¿LISTO PARA COMENZAR?
                 </Typography>
-                
+
                 <motion.div
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
@@ -475,15 +461,15 @@ const Navbar = ({ activeSection = "home" }) => {
                     Solicitar Demo
                   </Button>
                 </motion.div>
-                
-                <Typography 
-                  variant="body2" 
-                  color="text.secondary" 
-                  sx={{ 
-                    mt: 3, 
+
+                <Typography
+                  variant="body2"
+                  color="text.secondary"
+                  sx={{
+                    mt: 3,
                     textAlign: 'center',
-                    fontSize: '14px', 
-                    opacity: 0.7 
+                    fontSize: '14px',
+                    opacity: 0.7
                   }}
                 >
                   © 2025 FactTech. Todos los derechos reservados.
@@ -493,9 +479,9 @@ const Navbar = ({ activeSection = "home" }) => {
           </Dialog>
 
           {/* Renderizamos el componente del diálogo de demo */}
-          <DemoDialog 
-            open={demoDialogOpen} 
-            onClose={closeDemoDialog} 
+          <DemoDialog
+            open={demoDialogOpen}
+            onClose={closeDemoDialog}
           />
         </NavbarContainer>
       </StyledAppBar>
