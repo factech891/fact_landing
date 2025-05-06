@@ -6,10 +6,10 @@ import { useTheme } from '@mui/material/styles';
 // URLs de Cloudflare para cada imagen
 const imgFacturacionUrl = "https://pub-c37b7a23aa9c49239d088e3e0a3ba275.r2.dev/Facturacio%CC%81n%20Electro%CC%81nica.png";
 const imgInventarioUrl = "https://pub-c37b7a23aa9c49239d088e3e0a3ba275.r2.dev/Control%20de%20Inventario.png";
-const imgCobranzaUrl = "https://pub-c37b7a23aa9c49239d088e3e0a3ba275.r2.dev/cuentas.jpg";
+const imgCobranzaUrl = "https://pub-c37b7a23aa9c49239d088e3e0a3ba275.r2.dev/cuentas.png";
 const imgReportesUrl = "https://pub-c37b7a23aa9c49239d088e3e0a3ba275.r2.dev/reportes.png";
-const imgRetailUrl = "https://pub-c37b7a23aa9c49239d088e3e0a3ba275.r2.dev/retail.png";
-const imgLogisticaUrl = "https://pub-c37b7a23aa9c49239d088e3e0a3ba275.r2.dev/logistica.jpg";
+const imgRetailUrl = "https://pub-c37b7a23aa9c49239d088e3e0a3ba275.r2.dev/retai.png";
+const imgLogisticaUrl = "https://pub-c37b7a23aa9c49239d088e3e0a3ba275.r2.dev/logistica.png";
 
 const CoreModules = () => {
   const theme = useTheme();
