@@ -212,21 +212,38 @@ const Footer = () => {
         {/* Sección de copyright con emoji de robot */}
         <Box 
           sx={{ 
-            display: 'flex', 
-            flexDirection: { xs: 'column', md: 'row' },
-            justifyContent: 'space-between',
-            alignItems: { xs: 'center', md: 'flex-start' },
             textAlign: { xs: 'center', md: 'left' },
+            mb: { xs: 2, md: 0 }
           }}
         >
           <Typography 
             variant="body2" 
-            sx={{ color: '#6b7280', mb: { xs: 1, md: 0 } }}
+            sx={{ color: '#1f2937', mb: { xs: 1, md: 0 } }}
           >
             &copy; {new Date().getFullYear()} FactTech. Todos los derechos reservados.
           </Typography>
-          <Typography variant="body2" sx={{ color: '#6b7280' }}>
-            Diseñado por bitsdeve 🤖
+          <Typography 
+            variant="body2" 
+            sx={{ color: '#6b7280', mt: 0.5 }}
+          >
+            Diseñado por{' '}
+            <Typography
+              component="a"
+              href="https://bitsdeve.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{
+                color: '#2563eb',
+                textDecoration: 'none',
+                '&:hover': { 
+                  color: '#1d4ed8',
+                  textDecoration: 'underline'
+                },
+                transition: 'all 0.2s ease-in-out'
+              }}
+            >
+              bitsdeve 🤖
+            </Typography>
           </Typography>
         </Box>
       </Container>
